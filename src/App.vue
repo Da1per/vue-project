@@ -10,7 +10,11 @@ export default {
         add: function (){
             this.outText=this.inText
             this.inText=''
+        },
+        close: function(){
+            this.outText=''
         }
+
     }
 }
 </script>
@@ -22,6 +26,7 @@ export default {
         <div class="block_task">
             <div v-if="this.outText" class="block_task_begin">
                 {{this.outText}}
+                <button v-on:click="close">Close</button>
             </div>
             <textarea class="block_task_text" v-model='inText' placeholder="task...." />
             <input class="block_task_but" type="button" v-on:click='add' value="Add Task">
